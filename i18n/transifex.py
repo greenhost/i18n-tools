@@ -54,7 +54,7 @@ def pull(configuration, *resources):
     print("Pulling conf/locale/config.yaml:locales from Transifex...")
 
     for lang in configuration.translated_locales:
-        cmd = f'tx pull -f --mode=reviewed --minimum-perc=3 -l {lang}'
+        cmd = f'tx pull -f -l {lang}'
         if resources:
             for resource in resources:
                 execute(cmd + f' -r {resource}')
